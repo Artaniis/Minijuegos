@@ -24,5 +24,17 @@ namespace Minijuegos
         {
             InitializeComponent();
         }
+
+        private void BtnMenu_Click(object sender, RoutedEventArgs e)
+        {
+            if (!PanelMenu.IsLeftDrawerOpen)
+            {
+                PanelMenu.IsLeftDrawerOpen = true;
+            }
+            else if (PanelMenu.IsLeftDrawerOpen)
+            {
+                PanelMenu.IsLeftDrawerOpen = false;
+            }
+        }
     }
 }
