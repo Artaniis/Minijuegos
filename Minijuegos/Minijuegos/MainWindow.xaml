@@ -30,16 +30,17 @@
 
                 <Grid DockPanel.Dock="Top" Height="16" Background="{DynamicResource PrimaryHueDarkBrush}"/>
 
+                <!--Menu derecho-->
                 <materialDesign:PopupBox DockPanel.Dock="Right"
                                          Margin="0,0,16,0"
                                          PlacementMode="BottomAndAlignRightEdges">
-                    <ListBox>
-                        <ListBoxItem>Hello World</ListBoxItem>
-                        <ListBoxItem>Nice Popup</ListBoxItem>
-                        <ListBoxItem>Goodbye.</ListBoxItem>
-                    </ListBox>
+
+                    <StackPanel>
+                        <Button x:Name="AboutUs" Content="ABOUT US"/>
+                    </StackPanel>
                 </materialDesign:PopupBox>
 
+                <!--Boton Panel de Menu-->
                 <Button x:Name="BtnMenu"                    
                         Style="{StaticResource MaterialDesignToolButton}" 
                         Foreground="White"
@@ -51,6 +52,7 @@
                     <materialDesign:PackIcon Kind="Menu" Width="30" Height="30"/>
                 </Button>
 
+                <!--Titulo ventana-->
                 <TextBlock VerticalAlignment="Center" 
                            HorizontalAlignment="Center"
                            Margin="0,0,0,0" 
@@ -63,35 +65,75 @@
         <!--Contenedor inferior-->
         <Grid Grid.Row="1">
             <materialDesign:DrawerHost x:Name="PanelMenu">
+                <!--Panel de Menu-->
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <Grid>
-                        <StackPanel>
-                            
-                        </StackPanel>
+                        <ListBox>
+                            <ListBoxItem x:Name="Juego1" Padding="16,8,20,8">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""
+                                               FontFamily="{StaticResource MaterialIconsFont}"
+                                               FontSize="24"
+                                               Margin="0,0,8,0"
+                                               VerticalAlignment="Center"/>
+                                    
+                                    <TextBlock Text="Juego 1"
+                                               FontSize="16" 
+                                               VerticalAlignment="Center"/>
+                                    
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem x:Name="Juego2" Padding="16,8,8,8">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""
+                                               FontFamily="{StaticResource MaterialIconsFont}"
+                                               FontSize="24"
+                                               Margin="0,0,8,0"
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="Juego 2"
+                                               FontSize="16" 
+                                               VerticalAlignment="Center"/>
+
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem x:Name="Juego3" Padding="16,8,8,8">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""
+                                               FontFamily="{StaticResource MaterialIconsFont}"
+                                               FontSize="24"
+                                               Margin="0,0,8,0"
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="Juego 3"
+                                               FontSize="16" 
+                                               VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </ListBoxItem>
+
+                            <ListBoxItem x:Name="Juego4" Padding="16,8,8,8">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""
+                                               FontFamily="{StaticResource MaterialIconsFont}"
+                                               FontSize="24"
+                                               Margin="0,0,8,0"
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="Juego 4"
+                                               FontSize="16" 
+                                               VerticalAlignment="Center"/>
+
+                                </StackPanel>
+                            </ListBoxItem>
+                        </ListBox>
                     </Grid>
                 </materialDesign:DrawerHost.LeftDrawerContent>
 
                 <Grid>
-                    <Button Margin="0,0,0,0" 
-                            HorizontalAlignment="Center" 
-                            VerticalAlignment="Center"
-                            Style="{StaticResource MaterialDesignFlatButton}">
-                        
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock Grid.Column="1">PRESIONAME!</TextBlock>
-                            
-                            <materialDesign:PackIcon Kind="HumanGreeting" 
-                                                     Grid.Column="0" 
-                                                     Margin="0,0,8,0"/>
-                        </Grid>
-                    </Button>
-                    
-                    
+                    <!--Content Frame-->
+                    <Frame x:Name="ContentFrame" />
                 </Grid>
             </materialDesign:DrawerHost>
         </Grid>
