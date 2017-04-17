@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Minijuegos.Frames;
 
 namespace Minijuegos
 {
@@ -35,6 +36,18 @@ namespace Minijuegos
             {
                 PanelMenu.IsLeftDrawerOpen = false;
             }
+        }
+
+        private void Paginas_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Paginas.SelectedItem == Juego1)
+            {
+                ContentFrame.Navigate(new Juego1_Matching());
+            }
+            //else if (Paginas.SelectedItem == Juego2)
+            //{
+            //    ContentFrame.Navigate(new Page1());
+            //}
         }
     }
 }

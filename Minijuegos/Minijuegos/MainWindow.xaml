@@ -68,7 +68,7 @@
                 <!--Panel de Menu-->
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <Grid>
-                        <ListBox>
+                        <ListBox x:Name="Paginas" SelectionChanged="Paginas_SelectionChanged">
                             <ListBoxItem x:Name="Juego1" Padding="16,8,20,8">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text=""
@@ -133,7 +133,7 @@
 
                 <Grid>
                     <!--Content Frame-->
-                    <Frame x:Name="ContentFrame" />
+                    <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" />
                 </Grid>
             </materialDesign:DrawerHost>
         </Grid>
