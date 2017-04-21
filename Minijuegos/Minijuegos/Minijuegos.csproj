@@ -60,7 +60,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Frames\Juego1-Matching.xaml">
+    <Page Include="Frames\Juego1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Juego2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Juego3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Frames\Juego4.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -72,8 +84,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Frames\Juego1-Matching.xaml.cs">
-      <DependentUpon>Juego1-Matching.xaml</DependentUpon>
+    <Compile Include="Frames\Juego1.xaml.cs">
+      <DependentUpon>Juego1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Juego2.xaml.cs">
+      <DependentUpon>Juego2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Juego3.xaml.cs">
+      <DependentUpon>Juego3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Frames\Juego4.xaml.cs">
+      <DependentUpon>Juego4.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

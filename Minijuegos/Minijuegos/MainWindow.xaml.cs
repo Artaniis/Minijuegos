@@ -42,12 +42,20 @@ namespace Minijuegos
         {
             if (Paginas.SelectedItem == Juego1)
             {
-                ContentFrame.Navigate(new Juego1_Matching());
+                ContentFrame.Navigate(new Juego1());
             }
-            //else if (Paginas.SelectedItem == Juego2)
-            //{
-            //    ContentFrame.Navigate(new Page1());
-            //}
+            else if (Paginas.SelectedItem == Juego2)
+            {
+                ContentFrame.Navigate(new Juego2());
+            }
+            else if (Paginas.SelectedItem == Juego3)
+            {
+                ContentFrame.Navigate(new Juego3());
+            }
+            else if (Paginas.SelectedItem == Juego4)
+            {
+                ContentFrame.Navigate(new Juego4());
+            }
         }
     }
 }

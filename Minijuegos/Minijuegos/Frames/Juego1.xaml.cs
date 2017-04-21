@@ -21,7 +21,7 @@ namespace Minijuegos.Frames
     /// <summary>
     /// Lógica de interacción para Juego1_Matching.xaml
     /// </summary>
-    public partial class Juego1_Matching : Page
+    public partial class Juego1 : Page
     {
         // firstClicked points to the first control  
         // that the player clicks, but it will be null  
@@ -79,7 +79,7 @@ namespace Minijuegos.Frames
             }
         }
 
-        public Juego1_Matching()
+        public Juego1()
         {
             InitializeComponent();
             AssignIconsToSquares();
