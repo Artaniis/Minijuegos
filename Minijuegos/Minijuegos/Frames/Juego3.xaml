@@ -3,12 +3,48 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Minijuegos.Frames"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="Juego3">
+      d:DesignHeight="400" d:DesignWidth="500"
+      Title="Juego3_TicTacToe"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}">
 
-    <Grid>
-        
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="White" />
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="Container" Background="#FFD3D0D0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Click="Boton_Click" x:Name="Boton0_0" Grid.Column="0" Grid.Row="0" Content="X" />
+        <Button Click="Boton_Click" x:Name="Boton1_0" Grid.Column="1" Grid.Row="0" Content="O" />
+        <Button Click="Boton_Click" x:Name="Boton2_0" Grid.Column="2" Grid.Row="0"/>
+
+        <Button Click="Boton_Click" x:Name="Boton0_1" Grid.Column="0" Grid.Row="1"/>
+        <Button Click="Boton_Click" x:Name="Boton1_1" Grid.Column="1" Grid.Row="1"/>
+        <Button Click="Boton_Click" x:Name="Boton2_1" Grid.Column="2" Grid.Row="1"/>
+
+        <Button Click="Boton_Click" x:Name="Boton0_2" Grid.Column="0" Grid.Row="2"/>
+        <Button Click="Boton_Click" x:Name="Boton1_2" Grid.Column="1" Grid.Row="2"/>
+        <Button Click="Boton_Click" x:Name="Boton2_2" Grid.Column="2" Grid.Row="2"/>
     </Grid>
 </Page>
