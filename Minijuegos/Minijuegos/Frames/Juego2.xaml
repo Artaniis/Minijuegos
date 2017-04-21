@@ -10,5 +10,6 @@
 
     <Grid>
         <TextBlock>Esto es un cambio</TextBlock>
+        <TextBlock>otro cambio mio</TextBlock>
     </Grid>
 </Page>
