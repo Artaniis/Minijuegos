@@ -24,6 +24,7 @@ namespace Minijuegos
         public MainWindow()
         {
             InitializeComponent();
+            ContentFrame.Navigate(new HomePage());
         }
 
         private void BtnMenu_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,11 @@ namespace Minijuegos
 
         private void Paginas_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (Paginas.SelectedItem == Juego1)
+            if (Paginas.SelectedItem == Inicio)
+            {
+                ContentFrame.Navigate(new HomePage());
+            }
+            else if (Paginas.SelectedItem == Juego1)
             {
                 ContentFrame.Navigate(new Juego1());
             }

@@ -12,7 +12,10 @@
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}" MinWidth="550" MinHeight="550">
+        FontFamily="{DynamicResource MaterialDesignFont}" 
+        MinWidth="550" MinHeight="550" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -64,11 +67,26 @@
 
         <!--Contenedor inferior-->
         <Grid Grid.Row="1">
-            <materialDesign:DrawerHost x:Name="PanelMenu">
+            <materialDesign:DrawerHost x:Name="PanelMenu" IsLeftDrawerOpen="False">
                 <!--Panel de Menu-->
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <Grid>
                         <ListBox x:Name="Paginas" SelectionChanged="Paginas_SelectionChanged">
+                            <ListBoxItem x:Name="Inicio" Padding="16,8,20,8">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text=""
+                                               FontFamily="{StaticResource MaterialIconsFont}"
+                                               FontSize="24"
+                                               Margin="0,0,8,0"
+                                               VerticalAlignment="Center"/>
+
+                                    <TextBlock Text="Inicio"
+                                               FontSize="16" 
+                                               VerticalAlignment="Center"/>
+
+                                </StackPanel>
+                            </ListBoxItem>
+
                             <ListBoxItem x:Name="Juego1" Padding="16,8,20,8">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text=""

@@ -91,22 +91,6 @@ namespace Minijuegos.Frames
             timer1.Interval = new TimeSpan(0, 0, 1);
         }
 
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    foreach (Control item in CartasControl.Children)
-        //    {
-        //        ToggleButton prueba = (ToggleButton)item;
-
-        //        if (prueba.IsChecked == false)
-        //        {
-        //            prueba.IsChecked = true;
-        //        }
-        //        else
-        //        {
-        //            prueba.IsChecked = false;
-        //        }
-        //    }
-        //}
 
         //Timer timer1 = new Timer();
         DispatcherTimer timer1 = new DispatcherTimer();
@@ -114,6 +98,12 @@ namespace Minijuegos.Frames
         //Toggle Button Dummy
         ToggleButton btmDummy = null;
 
+        //Icono Click 1
+        //Icono Click 2
+        TextBlock Icono1, Icono2 = null;
+
+        //Iconos macheados XD
+        int macheados = 0;
 
         /// <summary> 
         /// Every control's Click event is handled by this event handler.
@@ -140,7 +130,13 @@ namespace Minijuegos.Frames
                     // If the clicked Control is is not checked, the player clicked 
                     // an icon that's already been revealed -- 
                     // ignore the click.
-                    if (clickedLabel.IsChecked == false)
+                    //if (clickedLabel.IsChecked == false)
+                    //{
+                    //    // All done - leave the if statements.
+                    //    clickedLabel.IsChecked = false;
+                    //    return;
+                    //}
+                    if (clickedLabel.Equals(PrimerClic))
                     {
                         // All done - leave the if statements.
                         clickedLabel.IsChecked = false;
@@ -156,6 +152,7 @@ namespace Minijuegos.Frames
                         {
                             PrimerClic = clickedLabel;
                             PrimerClic.IsChecked = false;
+                            Icono1 = (TextBlock)PrimerClic.Content;
 
                             // All done - leave the if statements.
                             return;
@@ -168,19 +165,29 @@ namespace Minijuegos.Frames
                             // Set its color to black.
                             SegundoClic = clickedLabel;
                             SegundoClic.IsChecked = false;
-
-                            // Check to see if the player won.
-                            CheckForWinner();
+                            Icono2 = (TextBlock)SegundoClic.Content;
 
                             // If the player clicked two matching icons, keep them  
                             // black and reset firstClicked and secondClicked  
                             // so the player can click another icon. 
-                            if (PrimerClic.Content == SegundoClic.Content)
+                            if (Icono1.Text == Icono2.Text)
                             {
-                                
+                                //TextBlock txt = (TextBlock)PrimerClic.Content;
+                                //txt.Foreground = Application.Current.Resources["SecondaryAccentBrush"] as Brush;
+                                //PrimerClic.Content = txt;
+                                //SegundoClic.Content = txt;
+                                PrimerClic.IsEnabled = false;
+                                SegundoClic.IsEnabled = false;
 
-                                PrimerClic = null;
-                                SegundoClic = null;
+                                macheados++;
+                                // Check to see if the player won.
+                                if (macheados == 15)
+                                {
+                                    MessageBox.Show("You matched all the icons!", "Congratulations!");
+                                }
+
+                                PrimerClic = SegundoClic = null;
+                                Icono1 = Icono2 = null;
                                 return;
                             }
                             else
@@ -191,13 +198,8 @@ namespace Minijuegos.Frames
                                 // a second, and then hide the icons)....
                                 timer1.Start();
                             }
-
                         }
-
-                        
                     }
-
-                    
                 }
             }
         }
@@ -226,32 +228,32 @@ namespace Minijuegos.Frames
             SegundoClic = null;
         }
 
-        /// <summary> 
-        /// Check every icon to see if it is matched, by  
-        /// comparing its foreground color to its background color.  
-        /// If all of the icons are matched, the player wins. 
-        /// </summary> 
-        private void CheckForWinner()
-        {
-            // Go through all of the labels in the TableLayoutPanel,  
-            // checking each one to see if its icon is matched.
-            foreach (Control item in CartasControl.Children)
-            {
-                ToggleButton control = (ToggleButton)item;
+        ///// <summary> 
+        ///// Check every icon to see if it is matched, by  
+        ///// comparing its foreground color to its background color.  
+        ///// If all of the icons are matched, the player wins. 
+        ///// </summary> 
+        //private void CheckForWinner()
+        //{
+        //    // Go through all of the labels in the TableLayoutPanel,  
+        //    // checking each one to see if its icon is matched.
+        //    foreach (Control item in CartasControl.Children)
+        //    {
+        //        ToggleButton control = (ToggleButton)item;
 
-                if (control != null)
-                {
-                    if (control.IsChecked == false)
-                    {
-                        return;
-                    }
-                }
-            }
+        //        if (control != null)
+        //        {
+        //            if (control.IsEnabled)
+        //            {
+        //                return;
+        //            }
+        //        }
+        //    }
 
-            // If the loop didn’t return, it didn't find 
-            // any unmatched icons. 
-            // That means the user won. Show a message and close the form.
-            MessageBox.Show("You matched all the icons!", "Congratulations!");
-        }
+        //    // If the loop didn’t return, it didn't find 
+        //    // any unmatched icons. 
+        //    // That means the user won. Show a message and close the form.
+        //    MessageBox.Show("You matched all the icons!", "Congratulations!");
+        //}
     }
 }
