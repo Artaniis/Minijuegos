@@ -107,7 +107,10 @@ namespace Minijuegos.Frames
 
         //Timer timer1 = new Timer();
         DispatcherTimer timer1 = new DispatcherTimer();
-        
+
+        //Toggle Button Dummy
+        ToggleButton btmDummy = null;
+
 
         /// <summary> 
         /// Every control's Click event is handled by this event handler.
@@ -121,6 +124,8 @@ namespace Minijuegos.Frames
             // so ignore any clicks if the timer is running 
             if (timer1.IsEnabled == true)
             {
+                btmDummy = (ToggleButton)sender;
+                btmDummy.IsChecked = true;
                 return;
             }
             else
@@ -138,45 +143,56 @@ namespace Minijuegos.Frames
                         clickedLabel.IsChecked = false;
                         return;
                     }
-
-                    // If firstClicked is null, this is the first icon  
-                    // in the pair that the player clicked, 
-                    // so set firstClicked to the label that the player  
-                    // clicked, change its color to black, and return. 
-                    if (PrimerClic == null)
+                    else
                     {
-                        PrimerClic = clickedLabel;
-                        PrimerClic.IsChecked = false;
+                        // If firstClicked is null, this is the first icon  
+                        // in the pair that the player clicked, 
+                        // so set firstClicked to the label that the player  
+                        // clicked, change its color to black, and return. 
+                        if (PrimerClic == null)
+                        {
+                            PrimerClic = clickedLabel;
+                            PrimerClic.IsChecked = false;
 
-                        // All done - leave the if statements.
-                        return;
+                            // All done - leave the if statements.
+                            return;
+                        }
+                        else
+                        {
+                            // If the player gets this far, the timer isn't 
+                            // running and firstClicked isn't null, 
+                            // so this must be the second icon the player clicked 
+                            // Set its color to black.
+                            SegundoClic = clickedLabel;
+                            SegundoClic.IsChecked = false;
+
+                            // Check to see if the player won.
+                            CheckForWinner();
+
+                            // If the player clicked two matching icons, keep them  
+                            // black and reset firstClicked and secondClicked  
+                            // so the player can click another icon. 
+                            if (PrimerClic.Content == SegundoClic.Content)
+                            {
+                                PrimerClic = null;
+                                SegundoClic = null;
+                                return;
+                            }
+                            else
+                            {
+                                // If the player gets this far, the player  
+                                // clicked two different icons, so start the  
+                                // timer (which will wait three quarters of  
+                                // a second, and then hide the icons).
+                                timer1.Start();
+                            }
+
+                        }
+
+                        
                     }
 
-                    // If the player gets this far, the timer isn't 
-                    // running and firstClicked isn't null, 
-                    // so this must be the second icon the player clicked 
-                    // Set its color to black.
-                    SegundoClic = clickedLabel;
-                    SegundoClic.IsChecked = false;
-
-                    // Check to see if the player won.
-                    CheckForWinner();
-
-                    // If the player clicked two matching icons, keep them  
-                    // black and reset firstClicked and secondClicked  
-                    // so the player can click another icon. 
-                    if (PrimerClic.Content == SegundoClic.Content)
-                    {
-                        PrimerClic = null;
-                        SegundoClic = null;
-                        return;
-                    }
-
-                    // If the player gets this far, the player  
-                    // clicked two different icons, so start the  
-                    // timer (which will wait three quarters of  
-                    // a second, and then hide the icons).
-                    timer1.Start();
+                    
                 }
             }
         }
