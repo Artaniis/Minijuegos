@@ -61,16 +61,19 @@ namespace Minijuegos.Frames
                 if (control != null)
                 {
                     int randomNumber = random.Next(icons.Count);
-
-                    TextBlock txt = new TextBlock();
+                    TextBlock txt = (TextBlock)control.Content;
                     txt.Text = icons[randomNumber];
-                    txt.FontFamily = Application.Current.Resources["MaterialIconsFont"] as FontFamily;
-                    txt.FontSize = 50;
-                    //txt.Foreground = Application.Current.Resources["SecondaryAccentBrush"] as Brush;
                     txt.Foreground = Brushes.Black;
-                    txt.Margin = new Thickness(0, 0, 0, 0);
-                    txt.HorizontalAlignment = HorizontalAlignment.Center;
-                    txt.VerticalAlignment = VerticalAlignment.Center;
+
+                    //TextBlock txt = new TextBlock();
+                    //txt.Text = icons[randomNumber];
+                    //txt.FontFamily = Application.Current.Resources["MaterialIconsFont"] as FontFamily;
+                    //txt.FontSize = 50;
+                    ////txt.Foreground = Application.Current.Resources["SecondaryAccentBrush"] as Brush;
+                    //txt.Foreground = Brushes.Black;
+                    //txt.Margin = new Thickness(0, 0, 0, 0);
+                    //txt.HorizontalAlignment = HorizontalAlignment.Center;
+                    //txt.VerticalAlignment = VerticalAlignment.Center;
 
                     control.Content = txt;
 
@@ -174,6 +177,8 @@ namespace Minijuegos.Frames
                             // so the player can click another icon. 
                             if (PrimerClic.Content == SegundoClic.Content)
                             {
+                                
+
                                 PrimerClic = null;
                                 SegundoClic = null;
                                 return;
