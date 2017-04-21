@@ -9,6 +9,6 @@
       Title="Juego2">
 
     <Grid>
-        
+        <TextBlock>Esto es un cambio</TextBlock>
     </Grid>
 </Page>
