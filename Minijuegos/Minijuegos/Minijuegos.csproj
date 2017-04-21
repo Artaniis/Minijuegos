@@ -103,6 +103,8 @@
     <Compile Include="Frames\Juego4.xaml.cs">
       <DependentUpon>Juego4.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Frames\Pad.cs" />
+    <Compile Include="Frames\Puck.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

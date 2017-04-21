@@ -5,11 +5,27 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Minijuegos.Frames"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
-      Title="Juego2">
+      d:DesignHeight="337.396" d:DesignWidth="681.44"
+      Title="Juego2"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      TextElement.FontWeight="Regular"
+      TextElement.FontSize="13"
+      TextOptions.TextFormattingMode="Ideal"
+      TextOptions.TextRenderingMode="Auto"
+      Background="{DynamicResource MaterialDesignPaper}"
+      FontFamily="{DynamicResource MaterialDesignFont}" KeyDown="Page_KeyDown" KeyUp="Page_KeyUp">
 
     <Grid>
-        <TextBlock>Esto es un cambio</TextBlock>
-        <TextBlock>otro cambio mio</TextBlock>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="261" Margin="10,10,0,0" VerticalAlignment="Top" Width="658">
+
+            <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="261" Margin="-1" VerticalAlignment="Top" Width="658"/>
+
+        </Border>
+        <Button x:Name="playpause" Content="Start" HorizontalAlignment="Left" Margin="546,287,0,0" VerticalAlignment="Top" Width="110" Height="34" Click="playpause_Click"/>
+        <Label x:Name="scoredisplay1" Content="0" HorizontalAlignment="Left" Margin="268,291,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="scoredisplay2" Content="0" HorizontalAlignment="Left" Margin="386,291,0,0" VerticalAlignment="Top"/>
+
+
     </Grid>
 </Page>
