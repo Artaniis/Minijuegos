@@ -15,7 +15,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}" 
         MinWidth="550" MinHeight="550" 
         WindowStartupLocation="CenterScreen" 
-        WindowState="Maximized">
+        WindowState="Maximized" IsTabStop="False">
     
     <Grid>
         <Grid.RowDefinitions>
@@ -67,7 +67,7 @@
 
         <!--Contenedor inferior-->
         <Grid Grid.Row="1">
-            <materialDesign:DrawerHost x:Name="PanelMenu" IsLeftDrawerOpen="False">
+            <materialDesign:DrawerHost x:Name="PanelMenu" IsLeftDrawerOpen="True">
                 <!--Panel de Menu-->
                 <materialDesign:DrawerHost.LeftDrawerContent>
                     <Grid>
@@ -102,9 +102,9 @@
                                 </StackPanel>
                             </ListBoxItem>
 
-                            <ListBoxItem x:Name="Juego2" Padding="16,8,8,8">
+                            <!--<ListBoxItem x:Name="Juego2" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text=""
+                                    <TextBlock Text=""
                                                FontFamily="{StaticResource MaterialIconsFont}"
                                                FontSize="24"
                                                Margin="0,0,8,0"
@@ -115,23 +115,23 @@
                                                VerticalAlignment="Center"/>
 
                                 </StackPanel>
-                            </ListBoxItem>
+                            </ListBoxItem>-->
 
                             <ListBoxItem x:Name="Juego3" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text=""
+                                    <TextBlock Text=""
                                                FontFamily="{StaticResource MaterialIconsFont}"
                                                FontSize="24"
                                                Margin="0,0,8,0"
                                                VerticalAlignment="Center"/>
 
-                                    <TextBlock Text="Juego 3"
+                                    <TextBlock Text="Juego 2"
                                                FontSize="16" 
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </ListBoxItem>
 
-                            <ListBoxItem x:Name="Juego4" Padding="16,8,8,8">
+                            <!--<ListBoxItem x:Name="Juego4" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text=""
                                                FontFamily="{StaticResource MaterialIconsFont}"
@@ -144,7 +144,7 @@
                                                VerticalAlignment="Center"/>
 
                                 </StackPanel>
-                            </ListBoxItem>
+                            </ListBoxItem>-->
                         </ListBox>
                     </Grid>
                 </materialDesign:DrawerHost.LeftDrawerContent>
