@@ -102,7 +102,7 @@
                                 </StackPanel>
                             </ListBoxItem>
 
-                            <!--<ListBoxItem x:Name="Juego2" Padding="16,8,8,8">
+                            <ListBoxItem x:Name="Juego2" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text=""
                                                FontFamily="{StaticResource MaterialIconsFont}"
@@ -115,7 +115,7 @@
                                                VerticalAlignment="Center"/>
 
                                 </StackPanel>
-                            </ListBoxItem>-->
+                            </ListBoxItem>
 
                             <ListBoxItem x:Name="Juego3" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
@@ -125,13 +125,13 @@
                                                Margin="0,0,8,0"
                                                VerticalAlignment="Center"/>
 
-                                    <TextBlock Text="Juego 2"
+                                    <TextBlock Text="Juego 3"
                                                FontSize="16" 
                                                VerticalAlignment="Center"/>
                                 </StackPanel>
                             </ListBoxItem>
 
-                            <!--<ListBoxItem x:Name="Juego4" Padding="16,8,8,8">
+                            <ListBoxItem x:Name="Juego4" Padding="16,8,8,8">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text=""
                                                FontFamily="{StaticResource MaterialIconsFont}"
@@ -144,7 +144,7 @@
                                                VerticalAlignment="Center"/>
 
                                 </StackPanel>
-                            </ListBoxItem>-->
+                            </ListBoxItem>
                         </ListBox>
                     </Grid>
                 </materialDesign:DrawerHost.LeftDrawerContent>
